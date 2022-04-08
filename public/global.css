@@ -1,0 +1,30 @@
+ol {
+  padding: 0;
+  counter-reset: list-item;
+}
+
+.todoitem {
+  display: flex;
+  align-items: center;
+  padding-inline: 1rem;
+  counter-increment: list-item;
+}
+
+.todoitem:nth-child(even) {
+  background: hsl(264 50% 96%);
+}
+.todoitem::before {
+  content: counter(list-item) ".";
+  margin-right: 0.5ch;
+  font-weight: 700;
+  color: hotpink;
+}
+
+.todoitem p {
+  margin-right: auto;
+}
+
+body {
+  padding-inline: max(2rem, (100% - 800px) / 2);
+  font-family: system-ui;
+}
